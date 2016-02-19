@@ -141,6 +141,11 @@ Add the following information to `secret.json` replace with your values:
 }
 ```
 
+Initialize log:
+the django module stores log files in the `logs` sub directory. As it is ignored by a `.gitignore` rule, you have to create the logs directory
+
+	mkdir logs
+
 Build:
 
 	./manage.py build
