@@ -90,14 +90,19 @@ You do not have to use builds, `nodejs`, `nodejs-legacy`, `npm`, `virtualenv`.
 
 Create a development environment
 --------------------------------
+First, make sure you are in the root of the CivilHub repository.
+Next, initiate a virtualenv
 
+	virtualenv Places
+	source Places/bin/activate
+	
 Install python dependencies:
-
+	
 	pip install -r requirements.txt
 
 Build:
 
-	python manage.py build
+	./manage.py build
 
 Multirequire  `./manage.py build`. Build and compress `less` and `js`.
 Options:
