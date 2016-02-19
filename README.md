@@ -99,6 +99,47 @@ Next, initiate a virtualenv
 Install python dependencies:
 	
 	pip install -r requirements.txt
+	
+Settings:
+Create a file called `settings/secret.json/` (create the directory `settings` as it doesn't exist and is ignored by a `.gitignore` rule)
+
+Add the following information to `secret.json` replace with your values:
+```javascript
+{
+    "host" : "localhost",
+    "username" : "[REPLACE]",
+    "password" : "[REPLACE]",
+    "secret_key" : "[REPLACE]",
+    "internal_ips" : ["127.0.0.1"],
+    "allowed_hosts" : ["127.0.0.1"],
+    "databases" : {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "[REPLACE]",
+            "USER": "[REPLACE]",
+            "PASSWORD": "[REPLACE]",
+            "HOST": "localhost",
+            "PORT": "3306"
+        }
+    },
+    "google_plus_key" : "",
+    "google_plus_secret" : "",
+    "facebook_key" : "",
+    "facebook_secret" : "",
+    "twitter_key" : "",
+    "twitter_secret" : "",
+    "linkedin_key" : "",
+    "linkedin_secret" : "",
+    "email_host" : "",
+    "email_user" : "",
+    "email_pass" : "",
+    "etherpad" : {
+        "apikey" : "[REPLACE]"
+    },
+    "raven_dsn" : "",
+    "clicky_site_id" : ""
+}
+```
 
 Build:
 
