@@ -88,7 +88,7 @@ Apps to install with apt-get install (on Debian-based distros):
 `python-xapian` you can install from different sources. You must symlink to virtualenv folder.
 You do not have to use builds, `nodejs`, `nodejs-legacy`, `npm`, `virtualenv`.
 
-A running `redis` is required.
+A running `redis` is required. Once you have redis running, you can configure connection settings in the file `places/settings.py`
 
 Create a development environment
 --------------------------------
