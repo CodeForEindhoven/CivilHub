@@ -83,7 +83,7 @@ Apps to install with apt-get install (on Debian-based distros):
 	nodejs-legacy
 	npm
 	
-Python 2.7 is required. This project IS NOT compatible with Python 3.
+`Python 2.7` is required. This project is **not** compatible with `Python 3`.
 
 `python-xapian` you can install from different sources. You must symlink to virtualenv folder.
 You do not have to use builds, `nodejs`, `nodejs-legacy`, `npm`, `virtualenv`.
