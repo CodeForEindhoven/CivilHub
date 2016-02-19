@@ -101,6 +101,7 @@ Install python dependencies:
 	pip install -r requirements.txt
 	
 Settings:
+
 Create a file called `settings/secret.json/` (create the directory `settings` as it doesn't exist and is ignored by a `.gitignore` rule)
 
 Add the following information to `secret.json` replace with your values:
@@ -141,7 +142,8 @@ Add the following information to `secret.json` replace with your values:
 }
 ```
 
-Initialize log:
+Logs:
+
 the django module stores log files in the `logs` sub directory. As it is ignored by a `.gitignore` rule, you have to create the logs directory
 
 	mkdir logs
