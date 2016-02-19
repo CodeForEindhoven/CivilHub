@@ -88,6 +88,8 @@ Apps to install with apt-get install (on Debian-based distros):
 `python-xapian` you can install from different sources. You must symlink to virtualenv folder.
 You do not have to use builds, `nodejs`, `nodejs-legacy`, `npm`, `virtualenv`.
 
+A running `redis` is required.
+
 Create a development environment
 --------------------------------
 First, make sure you are in the root of the CivilHub repository.
