@@ -88,12 +88,16 @@ Python 2.7 is required. This project IS NOT compatible with Python 3.
 `python-xapian` you can install from different sources. You must symlink to virtualenv folder.
 You do not have to use builds, `nodejs`, `nodejs-legacy`, `npm`, `virtualenv`.
 
-App python packages install:
+Create a development environment
+--------------------------------
+
+Install python dependencies:
 
 	pip install -r requirements.txt
 
-Build
------
+Build:
+
+	python manage.py build
 
 Multirequire  `./manage.py build`. Build and compress `less` and `js`.
 Options:
