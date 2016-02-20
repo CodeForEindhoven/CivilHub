@@ -355,7 +355,7 @@ LANGUAGES = (
 CACHES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
-        'LOCATION': 'redis:6379:1',
+        'LOCATION': '127.0.01:6379:1',
         'OPTIONS': {
             'CLIENT_CLASS': 'redis_cache.client.DefaultClient',
         }
