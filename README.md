@@ -59,8 +59,8 @@ Special thanks
 ----------
 We would like to say "thank you" to Browserstack (https://www.browserstack.com) for making their awesome tool available for us free of charge.
 
-Installation
-----------
+Requirements
+------------
 
 Apps to install with apt-get install (on Debian-based distros):
 
@@ -83,16 +83,76 @@ Apps to install with apt-get install (on Debian-based distros):
 	nodejs-legacy
 	npm
 	
-Python 2.7 is required. This project IS NOT compatible with Python 3.
+`Python 2.7` is required. This project is **not** compatible with `Python 3`.
 
 `python-xapian` you can install from different sources. You must symlink to virtualenv folder.
 You do not have to use builds, `nodejs`, `nodejs-legacy`, `npm`, `virtualenv`.
 
-App python packages install:
-	pip install -r requirements.txt
+A running `redis` is required. Once you have redis running, you can configure connection settings in the file `places/settings.py`
 
-Build
------
+Create a development environment
+--------------------------------
+First, make sure you are in the root of the CivilHub repository.
+Next, initiate a virtualenv
+
+	virtualenv Places
+	source Places/bin/activate
+	
+Install python dependencies:
+	
+	pip install -r requirements.txt
+	
+Settings:
+
+Create a file called `settings/secret.json/` (create the directory `settings` as it doesn't exist and is ignored by a `.gitignore` rule)
+
+Add the following information to `secret.json` replace with your values:
+```javascript
+{
+    "host" : "localhost",
+    "username" : "[REPLACE]",
+    "password" : "[REPLACE]",
+    "secret_key" : "[REPLACE]",
+    "internal_ips" : ["127.0.0.1"],
+    "allowed_hosts" : ["127.0.0.1"],
+    "databases" : {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "[REPLACE]",
+            "USER": "[REPLACE]",
+            "PASSWORD": "[REPLACE]",
+            "HOST": "localhost",
+            "PORT": "3306"
+        }
+    },
+    "google_plus_key" : "",
+    "google_plus_secret" : "",
+    "facebook_key" : "",
+    "facebook_secret" : "",
+    "twitter_key" : "",
+    "twitter_secret" : "",
+    "linkedin_key" : "",
+    "linkedin_secret" : "",
+    "email_host" : "",
+    "email_user" : "",
+    "email_pass" : "",
+    "etherpad" : {
+        "apikey" : "[REPLACE]"
+    },
+    "raven_dsn" : "",
+    "clicky_site_id" : ""
+}
+```
+
+Logs:
+
+the django module stores log files in the `logs` sub directory. As it is ignored by a `.gitignore` rule, you have to create the logs directory
+
+	mkdir logs
+
+Build:
+
+	./manage.py build
 
 Multirequire  `./manage.py build`. Build and compress `less` and `js`.
 Options:
