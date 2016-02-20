@@ -124,12 +124,12 @@ Add the following information to `secret.json` replace with your values:
     "allowed_hosts" : ["127.0.0.1"],
     "databases" : {
         "default": {
-            "ENGINE": "django.db.backends.mysql",
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
             "NAME": "[REPLACE]",
             "USER": "[REPLACE]",
             "PASSWORD": "[REPLACE]",
             "HOST": "localhost",
-            "PORT": "3306"
+            "PORT": "5432"
         }
     },
     "google_plus_key" : "",
