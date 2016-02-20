@@ -1,8 +1,8 @@
 CivilHub
 ----------
-CivilHub is a free and open-source platform written in Python & Django for the purpose of collaboration in local civic communities. 
+CivilHub is a free and open-source platform written in Python & Django for the purpose of collaboration in local civic communities.
 
-Our biggest dream is to build a tool that can helps us collaborate and communicate in the places we live in. In our opinion, citizens need a platform that will help them bring democracy and civil power onto a next level. 
+Our biggest dream is to build a tool that can helps us collaborate and communicate in the places we live in. In our opinion, citizens need a platform that will help them bring democracy and civil power onto a next level.
 
 We believe that together we can create amazing things in our cities.
 Brief: https://civilhub.org/brief/
@@ -15,11 +15,11 @@ Features
 ----------
 1. **Places** - each country, town, district and housing can have their own place that allows people to collaborate.
 2. **Ideas** - users can propose what should be improved in our environment, law or community.
-  - Everyone can vote for ideas. Vote Yes or No, 
+  - Everyone can vote for ideas. Vote Yes or No,
   - Anyone can check who voted Yes and who voted No,
   - You can add photos and use a rich-text editor to create content,
 3. **News** - a simple and powerful way to inform users what has happend in our community,
-4. **Discussions** - a multithreaded forum for places, has categories and tags, 
+4. **Discussions** - a multithreaded forum for places, has categories and tags,
 5. **Polls** - users can create polls for people in Places. All answers and statistics are public,
 6. **Projects** - one of most the most important part of our platform. I believe that Ideas on their own can't change the World. We have created a tool that allows to transform ideas into local civil projects. Users can create and divade tasks to bring the project alive. All of this was made in order to implement our ideas into life.
 7. **Map** - all content types can be marked on a map. You can see all the initiatives, discussions, projects and locations in a fully interactive map. Due to limitations in Google Maps (not a good solution for Clustering and displaying more than 100 thousand points on a map). We had to write our own solutions.
@@ -33,7 +33,7 @@ Features
 12. **User profiles** - You can see all user activities and all users in the location you belong to.
   - Login and registration via Facebook, Twitter, LinkedIn and Google+
 13. **Messages between users** - a simple system for communication between users, with anti spam security,
-14. **Categories** - all content can be categorized, 
+14. **Categories** - all content can be categorized,
 15. **Tags** - all content in the portal can be tagged,
 16. **Bookmarks** - all types of content can be bookmarked and later on accessed,
 17. **Filter and sort** -  all content type,
@@ -82,7 +82,7 @@ Apps to install with apt-get install (on Debian-based distros):
 	nodejs
 	nodejs-legacy
 	npm
-	
+
 `Python 2.7` is required. This project is **not** compatible with `Python 3`.
 
 `python-xapian` you can install from different sources. You must symlink to virtualenv folder.
@@ -92,17 +92,24 @@ A running `redis` is required. Once you have redis running, you can configure co
 
 Create a development environment
 --------------------------------
+
+### Python
+
 First, make sure you are in the root of the CivilHub repository.
 Next, initiate a virtualenv
 
 	virtualenv Places
 	source Places/bin/activate
-	
+
 Install python dependencies:
-	
+
 	pip install -r requirements.txt
-	
-Settings:
+
+### databases
+
+Make sure to use __Postgres__ as database. Other database types are not tested and might not be fully supported.
+
+### Settings
 
 Create a file called `settings/secret.json/` (create the directory `settings` as it doesn't exist and is ignored by a `.gitignore` rule)
 
@@ -144,22 +151,35 @@ Add the following information to `secret.json` replace with your values:
 }
 ```
 
-Logs:
+### Logs
 
 the django module stores log files in the `logs` sub directory. As it is ignored by a `.gitignore` rule, you have to create the logs directory
 
 	mkdir logs
 
-Build:
+### Node
+
+Two packages are required from node:
+
+	npm install -g less
+	npm install -g requirejs
+
+### Build
+
+Now everything is ready and you can start the first build
 
 	./manage.py build
+
+### Migrations
+
+	./manage.py migrate
+
+### Run
+
+	./manage.py runserver
+
 
 Multirequire  `./manage.py build`. Build and compress `less` and `js`.
 Options:
 	-m &lt;module_name&gt; Module name to compress, np. `idea-detail`.
 	--css-only	compress only `less` files
-
-To rebuild you need two packages:
-
-	npm install -g less
-	npm install -g requirejs
